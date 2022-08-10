@@ -51,9 +51,9 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "python_example"
-copyright = "2016, Sylvain Corlay"
-author = "Sylvain Corlay"
+project = "blazingMatch"
+copyright = "2022, Chuan Wang"
+author = "Chuan Wang"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -226,9 +226,9 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "python_example.tex",
-        "python_example Documentation",
-        "Sylvain Corlay",
+        "blazingMatch.tex",
+        "blazingMatch Documentation",
+        "Chuan Wang",
         "manual",
     ),
 ]
@@ -259,7 +259,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, "python_example", "python_example Documentation", [author], 1)
+    (master_doc, "blazingMatch", "blazingMatch Documentation", [author], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -274,11 +274,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "python_example",
-        "python_example Documentation",
+        "blazingMatch",
+        "blazingMatch Documentation",
         author,
-        "python_example",
-        "One line description of project.",
+        "blazingMatch",
+        "Blazing fast propensity score matching.",
         "Miscellaneous",
     ),
 ]
