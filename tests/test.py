@@ -1,6 +1,7 @@
 import blazingMatch as bm
 import numpy as np
 import pandas as pd
+from time import time
 
 ctr_score = np.array([
     np.arange(20),
