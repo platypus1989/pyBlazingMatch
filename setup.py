@@ -3,7 +3,7 @@ import sys
 from pybind11 import get_cmake_dir
 # Available at setup time due to pyproject.toml
 from pybind11.setup_helpers import Pybind11Extension, build_ext
-from setuptools import setup
+from setuptools import setup, Extension, find_packages
 
 __version__ = "0.0.1"
 
@@ -16,22 +16,29 @@ __version__ = "0.0.1"
 #   Sort input source files if you glob sources to ensure bit-for-bit
 #   reproducible builds (https://github.com/pybind/python_example/pull/53)
 
+dependencies = [
+    'statsmodels',
+    'pandas',
+    'numpy'
+  ]
+
 ext_modules = [
-    Pybind11Extension("python_example",
-        ["src/main.cpp"],
+    Pybind11Extension("cppmodule",
+        ["blazingMatch/src/main.cpp"],
         # Example: passing in the version to the compiled code
         define_macros = [('VERSION_INFO', __version__)],
         ),
 ]
 
 setup(
-    name="python_example",
+    name="blazingMatch",
     version=__version__,
-    author="Sylvain Corlay",
-    author_email="sylvain.corlay@gmail.com",
-    url="https://github.com/pybind/python_example",
-    description="A test project using pybind11",
+    author="Chuan Wang",
+    author_email="wangchuan1989@gmail.com",
+    url="https://github.com/platypus1989/pyBlazingMatch",
+    description="blazing fast propensity score matching with Python",
     long_description="",
+    packages = find_packages(),
     ext_modules=ext_modules,
     extras_require={"test": "pytest"},
     # Currently, build_ext only provides an optional "highest supported C++
@@ -39,4 +46,7 @@ setup(
     cmdclass={"build_ext": build_ext},
     zip_safe=False,
     python_requires=">=3.6",
+    include_package_data=True,
+    package_data={'': ['data/*.csv']},
+    install_requires=dependencies,
 )
